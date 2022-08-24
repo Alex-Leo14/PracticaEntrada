@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DD149EF3-1809-4CBB-B7CC-8A2D2A6031A8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SFB.Solutions.Repository</RootNamespace>
+    <AssemblyName>SFB.Solutions.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="M_Almacen\CategoriaRepository.cs" />
+    <Compile Include="M_Almacen\IngresosSalidasRepository.cs" />
+    <Compile Include="M_Almacen\MarcaRepository.cs" />
+    <Compile Include="M_Almacen\ProductoRepository.cs" />
+    <Compile Include="M_Almacen\SubCategoriaRepository.cs" />
+    <Compile Include="M_Inventarios\CajaRepository.cs" />
+    <Compile Include="M_Inventarios\CanalRepository.cs" />
+    <Compile Include="M_Inventarios\GrupoCajaRepository.cs" />
+    <Compile Include="M_Inventarios\RProductoRepository.cs" />
+    <Compile Include="M_Seguridad\DominioRepository.cs" />
+    <Compile Include="M_Seguridad\EmpresaRepository.cs" />
+    <Compile Include="M_Seguridad\LocalRepository.cs" />
+    <Compile Include="M_Seguridad\ModuloRepository.cs" />
+    <Compile Include="M_Seguridad\SeriesRepository.cs" />
+    <Compile Include="M_Seguridad\TDocumentoRepository.cs" />
+    <Compile Include="M_Seguridad\UsuarioRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="M_Compras\" />
+    <Folder Include="M_Finanzas\" />
+    <Folder Include="M_Ventas\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EDOSwit.AbstraccionSP\EDOSwit.AbstraccionSP.csproj">
+      <Project>{64638b7f-6f8a-4125-b1a8-82917f2b7ac8}</Project>
+      <Name>EDOSwit.AbstraccionSP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SFB.Solutions.Entities\SFB.Solutions.Entities.csproj">
+      <Project>{bcd6f849-d768-4752-a6cc-c811db1534ff}</Project>
+      <Name>SFB.Solutions.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SFB.Solutions.Helpers\SFB.Solutions.Helpers.csproj">
+      <Project>{A770CA1A-1FA3-431F-8195-C5E2B310675B}</Project>
+      <Name>SFB.Solutions.Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SFB.Solutions.Sevices\SFB.Solutions.Sevices.csproj">
+      <Project>{FC0ACD4E-3419-4414-8BB2-3D1601686679}</Project>
+      <Name>SFB.Solutions.Sevices</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

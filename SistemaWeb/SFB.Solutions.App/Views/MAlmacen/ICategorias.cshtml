@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewBag.Title = "ICategorias";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{
+    ViewBag.Title = "IMarca";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row wrapper border-bottom skyblue-bg page-heading" style="color:#33130F;">
+    <div class="col-lg-10">
+        <h2><b>Categorias</b></h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="@Url.Action("Index", "Home")">Inicio</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a>Modulo Almacen</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a>Maestros</a>
+            </li>
+            <li class="active breadcrumb-item">
+                <strong>M. Categorias</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12 b-r">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>Mantenimiento de Categoria</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-12" style="text-align:right">
+
+                            <button type="button" class="btn btn-outline-secondary" data-toggle="modal" id="btnCrear">
+                                <span class="fa fa-plus" aria-hidden="true"></span>&nbsp;Crear
+                            </button>
+
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="form-group row">
+                        <div class="col-lg-12">
+                            <div class="table-responsive">
+                                <table id="TbCategoria" class="table table table-striped table-bordered table-hover" style="width:100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>Codigo</th>
+                                            <th>Descripción</th>
+                                            
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@Html.Partial("~/Views/Modal/_SmallModal.cshtml")
+<script src="~/Scripts/M_Almacen/MACategoria.js"></script>
+
+@section Styles {
+    @Styles.Render("~/plugins/toastrStyles")
+    @Styles.Render("~/plugins/select2Styles")
+    @Styles.Render("~/plugins/dateRangeStyles")
+    @Styles.Render("~/plugins/dataPickerStyles")
+    @Styles.Render("~/plugins/sweetAlertStyles")
+    @Styles.Render("~/plugins/clockpickerStyles")
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+}
+
+@section Scripts {
+    @Scripts.Render("~/plugins/codeEditor")
+    @Scripts.Render("~/plugins/sweetAlert")
+    @Scripts.Render("~/plugins/toastr")
+    @Scripts.Render("~/plugins/select2")
+    @Scripts.Render("~/plugins/dataPicker")
+    @Scripts.Render("~/plugins/clockpicker")
+    @Scripts.Render("~/plugins/dateRange")
+    @Scripts.Render("~/plugins/dataTables")
+
+}

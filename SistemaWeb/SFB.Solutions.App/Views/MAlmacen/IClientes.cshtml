@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "IClientes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{
+    ViewBag.Title = "IMarca";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row wrapper border-bottom skyblue-bg page-heading" style="color:#33130F;">
+    <div class="col-lg-10">
+        <h2><b>Clientes</b></h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="@Url.Action("Index", "Home")">Inicio</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a>Modulo Almacen</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a>Maestros</a>
+            </li>
+            <li class="active breadcrumb-item">
+                <strong>M. Clientes</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12 b-r">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>Mantenimiento de Clientes</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-12" style="text-align:right">
+                            <button type="button" class="btn btn-primary" title="Exportar" id="btnExportar" autocomplete="off">
+                                <span class="glyphicon glyphicon-export" aria-hidden="true"></span>&nbsp;Exportar
+                            </button>
+
+                            <button type="button" class="btn btn-outline-secondary" data-toggle="modal" id="btnCrear">
+                                <span class="fa fa-plus" aria-hidden="true"></span>&nbsp;Crear
+                            </button>
+
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="form-group row">
+                        <div class="col-lg-12">
+                            <div class="table-responsive">
+                                <table id="TbClientes" class="table table table-striped table-bordered table-hover" style="width:100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>Codigo</th>
+                                            <th>Descripción</th>
+                                            <th>Estado</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

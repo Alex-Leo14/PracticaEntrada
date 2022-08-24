@@ -1,0 +1,368 @@
+﻿
+@{
+    ViewBag.Title = "TIngresoSalida";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<div class="ibox" id="ibox1">
+    <div class="ibox-content">
+        <div class="sk-spinner sk-spinner-wave">
+            <div class="sk-rect1"></div>
+            <div class="sk-rect2"></div>
+            <div class="sk-rect3"></div>
+            <div class="sk-rect4"></div>
+            <div class="sk-rect5"></div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <span class="fa fa-angle-double-right" aria-hidden="true"></span>&nbsp;
+                                    <label class="lbl-mod">Comprobante</label>
+                                    <select id="cboTipoDocId" class="select2 form-control" style="width: 100%;" required>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="form-group">
+                                    <span class="fa fa-angle-double-right" aria-hidden="true"></span>&nbsp;
+                                    <label class="lbl-mod">Serie</label>
+                                    <input id="txtSerie" type="text" class="form-control" placeholder="Serie" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <span class="fa fa-angle-double-right" aria-hidden="true"></span>&nbsp;
+                                    <label class="lbl-mod">Número</label>
+                                    <input id="txtNumero" type="text" class="form-control" placeholder="Numero" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+
+                            </div>
+                            <div class="col-md-2">
+                                <span class="fa fa-angle-double-right" aria-hidden="true"></span>&nbsp;
+                                <label class="lbl-mod">Fecha</label>
+                                <div class="input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" id="FechaDocumento" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row pb-2">
+            <div class="col-lg-12 pb-2">
+                <div class="tabs-container">
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a class="nav-link active" data-toggle="tab" href="#tab-CP"> <i class="fa fa-user"> Cliente Proveedor</i></a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="tab-CP" class="tab-pane active">
+                            <div class="panel-body">
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="fa fa-angle-double-right" aria-hidden="true"></span>&nbsp;
+                                            <label class="lbl-mod">Tipo Cliente</label>
+                                            <select id="cboTipoClienteId" class="select2 form-control" style="width: 100%;" required>
+                                                <option value="0">[[SELECCIONE]]</option>
+                                                <option value="I">INTERNO</option>
+                                                <option value="E">EXTERNO</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <span class="fa fa-angle-double-right" aria-hidden="true"></span>&nbsp;
+                                            <label class="lbl-mod">Proveedor</label>
+                                            <select id="cboClienteId" class="selectCliente form-control" style="width: 100%;" required>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-2 pr-lg-1">
+                                        <span class="fa fa-angle-double-right" aria-hidden="true"></span>&nbsp;
+                                        <label class="lbl-mod">Código</label>
+                                        <div class="input-group">
+                                            <input id="txtClienteLocalId" type="text" class="form-control" placeholder="Código" maxlength="8">
+                                            <button id="btnCliente" type="button" class="btn btn-primary btn-sm btn-outline">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 px-lg-1">
+                                        <div class="form-group">
+                                            <span class="fa fa-angle-double-right" aria-hidden="true"></span>&nbsp;
+                                            <label class="lbl-mod">Local</label>
+                                            <input type="text" id="txtNombreLocal" class="form-control" placeholder="Local" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7 pl-lg-1">
+                                        <div class="form-group">
+                                            <span class="fa fa-angle-double-right" aria-hidden="true"></span>&nbsp;
+                                            <label class="lbl-mod">Dirección</label>
+                                            <input type="text" id="txtDireccion" class="form-control" placeholder="Dirección" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 pr-lg-1">
+                                        <div class="form-group">
+                                            <span class="fa fa-angle-double-right" aria-hidden="true"></span>&nbsp;
+                                            <label class="lbl-mod">Motivo</label>
+                                            <select id="cboMotivoId" class="selectMotivo form-control" style="width: 100%;" required>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 px-lg-1">
+                                        <div class="form-group">
+                                            <span class="fa fa-angle-double-right" aria-hidden="true"></span>&nbsp;
+                                            <label class="lbl-mod">Moneda</label>
+                                            <select id="cboMonedaId" class="selectMoneda form-control" style="width: 100%;" required>
+                                                <option value="01">Guia de Ingreso</option>
+                                                <option value="01">Guia de Salida</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-2 pr-lg-1">
+                                    <div class="form-group">
+                                        <span class="fa fa-angle-double-right" aria-hidden="true"></span>&nbsp;
+                                        <label class="lbl-mod">Tipo</label>
+                                        <input type="text" id="txtMovTipRef" class="form-control" placeholder="Tipo" readonly value="OC">
+                                    </div>
+                                </div>
+                                <div class="col-md-2 px-lg-1">
+                                    <div class="form-group">
+                                        <span class="fa fa-angle-double-right" aria-hidden="true"></span>&nbsp;
+                                        <label class="lbl-mod">Serie</label>
+                                        <input type="text" id="txtMovSerRef" class="form-control" placeholder="Serie">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 px-lg-1">
+                                    <span class="fa fa-angle-double-right" aria-hidden="true"></span>&nbsp;
+                                    <label class="lbl-mod">Número</label>
+                                    <div class="input-group">
+                                        <input id="txtMovNumRef" type="text" class="form-control" placeholder="Código" maxlength="10">
+                                        <button id="btnBuscarDocumento" type="button" class="btn btn-primary btn-sm btn-outline">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 pl-lg-1">
+                                    <div class="form-group">
+                                        <span class="fa fa-angle-double-right" aria-hidden="true"></span>&nbsp;
+                                        <label class="lbl-mod">Fecha</label>
+                                        <div class="input-group date">
+                                            <span class="input-group-addon" style="background-color: #408080;color: white;"><i class="fa fa-calendar"></i></span>
+                                            <input type="text" id="MovFechRef" class="form-control" style="background-color: #408080;color: white;font-size: 20px;text-align: center;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="tabs-container">
+
+                <ul class="nav nav-tabs">
+                    <li>
+                        <a class="nav-link active" data-toggle="tab" href="#tab-DR"> <i class="fa fa-columns"> Documentos de Referencia</i></a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div id="tab-DR" class="tab-pane">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <span class="fa fa-angle-double-right" aria-hidden="true"></span>&nbsp;
+                                        <label class="lbl-mod">Local</label>
+                                        <select id="cboMovLocTra" class="select2 form-control" style="width: 100%;" required>
+                                            <option value="01">Monfer</option>
+                                            <option value="01">Santuario</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-md-2 pr-lg-1">
+                                    <div class="form-group">
+                                        <span class="fa fa-angle-double-right" aria-hidden="true"></span>&nbsp;
+                                        <label class="lbl-mod">Tipo</label>
+                                        <input type="text" id="txtMovTipTra" class="form-control" placeholder="Tipo" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 px-lg-1">
+                                    <div class="form-group">
+                                        <span class="fa fa-angle-double-right" aria-hidden="true"></span>&nbsp;
+                                        <label class="lbl-mod">Serie</label>
+                                        <input type="text" id="txtMovSerTra" class="form-control" placeholder="Serie" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 px-lg-1">
+                                    <div class="form-group">
+                                        <span class="fa fa-angle-double-right" aria-hidden="true"></span>&nbsp;
+                                        <label class="lbl-mod">Número</label>
+                                        <input type="text" id="txtMovNumTra" class="form-control" placeholder="Número" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-xs-2 mx-1">
+        <div style="border:solid 1px #C0C0C0;width:100%;border-style:dashed;"></div>
+    </div>
+    <div class="row mt-3 justify-start">
+        <div class="col-md-1 mb-2">
+            <button id="btnAgregar" type="button" class="btn btn-add-product btn-block">
+                <span class="fa fa-cart-plus fa-2x" aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="col-md-1">
+            <button id="btnGuardarTransaccion" type="button" class="btn btn-primary btn-block">
+                <span class="fa fa-save fa-2x" aria-hidden="true"></span>
+            </button>
+        </div>
+
+        <div class="col-md-10">
+            <div style="float:right;">
+                <button id="btnCancelar" type="button" class="btn btn-secondary btn-lg btn-block" style="float:right;">
+                    <span class="fa fa-mail-reply fa-2x" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2 mx-1">
+        <div style="border:solid 1px #C0C0C0;width:100%;border-style:dashed;"></div>
+    </div>
+
+
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table id="TbTranMovimientos" class="table table-striped" style="width:100%;">
+                    <thead style="background-color:#004481;color:white;">
+                        <tr>
+                            <th>CÓDIGO</th>
+                            <th>DESCRIPCIÓN PRODUCTO</th>
+                            <th>CANTIDAD</th>
+                            <th>CANTIDAD R</th>
+                            <th>P. UNITARIO</th>
+                            <th>S. TOTAL</th>
+                            <th>IMPUESTO</th>
+                            <th>TOTAL</th>
+                            <th>OPCIONES</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-xs-4 col-md-4 col-lg-9">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                </thead>
+                <tbody>
+                    <tr style="font-size:15px;">
+                        <th>SUB TOTAL</th>
+                        <th>
+                            <div class="form-group">
+                                <div class="input-group m-b">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-addon" style="background-color:#014581;color:white;">S/.</span>
+                                    </div>
+                                    <input id="txtSubTotalMov" type="text" class="form-control" placeholder="00.00" style="color:black;text-align:center;font-weight:600;font-size:20px;" readonly>
+                                </div>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr style="font-size:15px;">
+                        <th>IGV (18%)</th>
+                        <th>
+                            <div class="form-group">
+                                <div class="input-group m-b">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-addon" style="background-color:#014581;color:white;">S/.</span>
+                                    </div>
+                                    <input id="txtImpuestoMov" type="text" class="form-control" placeholder="00.00" style="color:black;text-align:center;font-weight:600;font-size:20px;" readonly>
+                                </div>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr class="table-primary" style="font-size:15px;">
+                        <th>TOTAL</th>
+                        <th>
+                            <div class="form-group">
+                                <div class="input-group m-b">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-addon" style="background-color:#014581;color:white;">S/.</span>
+                                    </div>
+                                    <input id="txtTotalMov" type="text" class="form-control" placeholder="00.00" style="color:black;text-align:center;font-weight:600;font-size:20px;" readonly>
+                                </div>
+                            </div>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+@Html.Partial("~/Views/Modal/_LargeModal.cshtml")
+
+<script src="~/Scripts/M_Almacen/MAIngresosSalidas.js"></script>
+
+@section Styles {
+    @Styles.Render("~/plugins/toastrStyles")
+    @Styles.Render("~/plugins/select2Styles")
+    @Styles.Render("~/plugins/dateRangeStyles")
+    @Styles.Render("~/plugins/dataPickerStyles")
+    @Styles.Render("~/plugins/sweetAlertStyles")
+    @Styles.Render("~/plugins/clockpickerStyles")
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+}
+
+@section Scripts {
+    @Scripts.Render("~/plugins/codeEditor")
+    @Scripts.Render("~/plugins/sweetAlert")
+    @Scripts.Render("~/plugins/toastr")
+    @Scripts.Render("~/plugins/select2")
+    @Scripts.Render("~/plugins/dataPicker")
+    @Scripts.Render("~/plugins/clockpicker")
+    @Scripts.Render("~/plugins/dateRange")
+    @Scripts.Render("~/plugins/dataTables")
+
+}
